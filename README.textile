@@ -1,0 +1,28 @@
+h1. Flickerd ZenPhoto Theme
+
+Flickerd is a *"ZenPhoto":zen_url Theme* that is based off of the "Flickrish Theme":flickrish_url 
+hosted on Google Code.
+It integrates a photo stream similar to Flickr.com and implements a similar design as well.
+It is still being developed and I hope to be able to add new features soon.
+
+The *Flickerd Theme* is licensed under the "MIT License":http://opensource.org/licenses/mit-license.php .
+
+h2. Usage
+
+Refer to ZenPhoto's documentation on how to add and use themes.  It works just like a normal theme does.
+
+h2. Feedback
+
+*Report An Issue/Bug*
+Please report issues on the project's "GitHub Issues":issues page.
+
+*Comments/Suggestions*
+If you'd like to leave feedback, please visit the "ZenPhoto's Forums":feedback_link
+and leave a comment on the post for this theme.  Hopefully a better commenting system can be
+implimented at a later date.
+
+[issues]http://github.com/amereservant/FlickerdTheme/issues
+[feedback_link]http://www.zenphoto.org/support/
+[Wiki_Page]http://wiki.github.com/amereservant/FlickerdTheme/
+[flickrish_url]http://code.google.com/p/flickrish/
+[zen_url]http://www.zenphoto.org

@@ -1,0 +1,233 @@
+*{font-family:Arial,Helvetica,sans-serif}
+/** ADMIN TOOLBOX **/
+#admin { display:inline }
+#admin h3 { font-size:10pt; display:inline; white-space:nowrap }
+#admin h3 a { background:transparent url('../images/dropdown.png') no-repeat center right; padding-right:22px }
+#admin_data { position:absolute; top:24px; background:#F5F5F5; height:30px; width:740px; margin:auto }
+#admin_data ul li { float:left; position:relative; border-right:1px dotted #CCC; padding:0 4px }
+#admin_data ul li a { display:inline-block; padding:0 5px }
+
+.albumPic { width:91px; height:95px; background:transparent url(../images/album.gif) no-repeat center center }
+.albumThumb { margin:8px }
+
+div.pagelist { padding:20px 0; text-align:center }
+
+/*
+div.image{height:100%;width:75px;float:left;margin:15px 2px 2px}
+div.imagePic{width:75px;height:75px;background:transparent url(../images/album.gif) no-repeat center center}
+div.image-details{width:240px;float:left;margin:10px}
+.image-details p{font-size:7pt;color:#666;clear:left;width:240px}
+.image-details p .jeip-editor textarea{width:240px;font-size:10pt}
+div.image-details h3{height:20px;overflow:hidden;font-size:11pt}
+div.imagePic-details img{float:left}
+
+div.albumTitle{margin:25px 0}
+
+div.albumRss{clear:both;color:#aaa;padding:25px 0 0}
+
+
+div.singleImage{width:500px}
+
+
+
+
+div.imageInfo{height:30px;color:#666}
+
+div.toggle{background:transparent url(../images/toggle_open.gif);position:relative;text-align:center;width:18px;height:25px;top:1px}
+div.closed{background:transparent url(../images/toggle_closed.gif)}
+div#imageBrowser .albumName{font-size:11pt;font-weight:700;left:30px;position:relative;top:20px;width:142px}
+div.toggleBox{border:solid 1px #dfdfdf;background:#f3f3f3;padding:5px}
+
+div.searchHeader{background:transparent url(images/icon_ok) no-repeat left center;height:18px;padding-left:20px;line-height:20px;margin:25px 0}
+h2.searchAlbumsHeading{font-weight:400;clear:both;margin:0;padding:0 0 10px}
+h2.searchPhotosHeading{font-weight:400;clear:both;margin:0;padding:20px 0 10px}
+#imagemetadata_data{border:solid 1px #dfdfdf;width:250px}
+#imagemetadata_data td{text-align:left;vertical-align:top}
+#commentcontent h3 { padding:20px 0 5px }
+#comments{ font-size:1.2em }
+.comment { margin:15px 0 20px }
+div.commentmeta{font-size:9pt;font-weight:700}
+div.commentbody{font-size:9pt;margin:10px}
+div.commentdate{color:#666}
+.commentinfo h4 { color:#AAA; font-weight:300 }
+.commentinfo a { font-weight:800 }
+
+
+#captcha-code { margin-left:110px }
+.leavecomment{width:75%}
+.leavecomment .inputbox{font-size:10pt;width:100%;margin:5px;padding:5px}
+.leavecomment textarea{font-size:10pt;width:100%;margin:5px;padding:5px}
+.commentform_label{width:25px;font-size:10pt;color:#666}
+.pushbutton{font-size:10pt;padding:5px}
+
+#rating #vote{display:none}
+.sizetable{clear:both}
+.imagesizename{font-size:9pt;text-align:center;text-decoration:underline;padding:0 5px}
+
+a img,.imagesizetitle{border:none}
+ul.pagelist,ul.pagelist li{list-style-type:none;display:inline;margin:0;padding:0}
+span.albumOption a,span.albumOption a:hover{font-size:11pt;color:#000;text-decoration:none}
+.dateuploaded,.viewinfo,div.imageSide p{color:#aaa;margin-top:10px}
+*/
+
+.clear { clear:both }
+pre { white-space:pre }
+.iblock { display:inline-block }
+a { color:#0063DC; text-decoration:none }
+a:hover { color:#0063DC; text-decoration:underline }
+header { border-bottom:dotted 1px #ccc; padding-top:5px }
+header h1 { font-weight:800; color:#0063DC; width:980px; margin:0 auto; font-size:28px }
+header h1 span { color:#FF0084 }
+h2 { font-size:24px; margin:0 0 5px }
+h3 { font-size:16px; margin:10px 0 }
+h4 { font-size:14px; margin:10px 0 0 }
+
+/** Menu Bar **/
+.menu { float:left; width:530px; line-height:25px }
+.menu a { font-weight:700 }
+ul.flat { list-style-type:none; margin:0; padding:0}
+ul.flat li { list-style-type:none; display:inline; margin:0; padding:0 }
+header #menuBar { width:980px; margin:0 auto }
+header #menuBar > ul > li { position:relative; display:inline-block }
+.menuitem, .admintoolbox { font-size:12px; padding:0 5px }
+.menuitem { border-right:1px dotted #CCC }
+
+/** Search **/
+#search { float:left; margin:0; padding:0 }
+#search_form br{font-size:1px}
+#search_input { width:170px; font-size:10px; clear:right; padding:1px; height:12px }
+#search_submit{color:#0063DC;border:none;background:transparent;font-weight:700;margin:0;padding:0}
+#searchfields_icon{vertical-align:middle}
+#searchextrashow{display:block;width:250px;position:absolute;background:#fff;border:solid 1px #ccc;border-top:none;text-align:left;clear:both;z-index:1;margin:0;padding:0}
+#searchextrashow li{display:block;margin:2px}
+.results { font-size:12px; display:inline-block; padding:5px; background:#F5F5F5; margin:0 0 10px }
+
+#content { width:980px;font-size:10px; margin:35px auto }
+#pg-1 #flkr-feed { width:650px } /* Compensate for the Album List on the index page */
+#flkr-feed ul li { display:inline-block; padding:0 47px 0 35px; vertical-align:top; width:240px }
+#flkr-feed .pic-info { color:#777 }
+#flkr-feed .pic-info-bottom { color:#777; margin:5px auto 25px }
+#flkr-feed h4 { font-size:14px; margin:5px 0 }
+
+ul.pagelist li { display:inline }
+ul.pagelist li a, ul.pagelist li.current, ul.pagelist li .disabledlink { border:1px solid #EEE; font-size:12px; padding:1px 4px }
+ul.pagelist li a:hover { background:#0063DC; color:#FFF }
+ul.pagelist li.current { color:#FF0084; font-weight:800 }
+ul.pagelist li .disabledlink { color:#BBB }
+
+#itemCount { text-align:center; color:#999 }
+
+/** ASIDE **/
+aside#albums { float:right; width:260px; background:#F5F5F5; padding:0 15px; font-size:12px }
+aside#albums .album { margin:0 0 20px; display:block }
+aside#albums .albumPic { float:left; width:91px; height:95px; background:transparent url(../images/album.gif) no-repeat center center }
+aside#albums h4 { font-size:16px; margin-bottom:3px }
+aside#albums .albumInfo { padding:0 10px; width:145px }
+
+/** BREADCRUMBS **/
+#breadcrumbs { font-size:12px; margin:35px 0 20px }
+
+/** ALBUM **/
+.albums { padding:10px 42px 5px; margin:0 0 25px }
+.albums h4 { }
+.albums ul li { display:inline-block }
+.albums ul li .albumInfo { margin:5px 0 }
+#albumOptions { font-size:12px; line-height:20px; margin:0 0 25px }
+#albumOptions span { color:#CCC }
+.albumInfo { float:left; color:#777 }
+aside.albumInfo { width:270px }
+.albumInfo > span { border:10px solid #F5F5F5 }
+.albumInfo span img { margin-bottom:-3px }
+.albumStats { color:#AAA; margin:10px 0 0}
+
+#images-grid ul { float:right; width:700px }
+#images-grid li { display:inline-block; margin:0 3px 3px 0 }
+#images-grid li a:hover img { opacity:0.5; filter:alpha(opacity=50) }
+
+.images ul li { display:inline-block; width:240px; margin:0 42px 10px; vertical-align:top }
+
+.imageDescription, .albumDescription { margin:10px 0 0; font-size:12px; color:#000 }
+.dateuploaded, .viewinfo { color:#AAA; margin:2px 0 0 }
+.dateuploaded { margin:10px 0 0 }
+.dateuploaded span { color:#555 }
+.viewinfo { margin:2px 0 10px }
+
+/** SINGLE IMAGE **/
+.taglist li { display:inline-block }
+#imageSide { float:left; width:500px }
+#buttonbar { height:25px }
+.sizesbutton { background:transparent url(../images/photo-button-bar-sprite.gif) no-repeat 5px -552px; height:22px; width:57px }
+.sizesbutton a { height:22px; width:57px; display:block }
+.sizesbutton a:hover { text-decoration:none; border:1px outset #ccc }
+
+#imageSidebar { float:left; margin:0 0 0 45px; width:220px }
+#imageSidebar h3 { position:relative; left:30px; top:20px; font-size:15px; margin:0 }
+
+/** Sidebar **/
+.smBuddy{ float:left; width:20px; margin-right:5px }
+
+#toggle { height:25px; width:18px; background:transparent url('../images/toggle_sprite.gif') no-repeat 0 -25px }
+#toggle:hover { background-position:-18px -25px }
+#toggle.closed { background-position:0 0 }
+#toggle.closed:hover { background-position:-18px 0 }
+#toggleBox { background:#F3F3F3; border:1px solid #DFDFDF; padding:5px }
+#thumbBoxes { text-align:center; min-width:188px /** min-width is for the js transition, otherwise the animation wouldn't be correct **/ }
+#thumbBoxes li { display:inline-block }
+#thumbBoxes li a { display:block; padding:2px }
+#thumbNav { text-align:center }
+#thumbNav span { display:inline-block }
+#thumbNav span a { display:block; width:37px; height:10px }
+#browsePrev, #browseNext, #browsePrev a, #browseNext a { width:37px; height:10px; background:transparent url('../images/arrow_sprite.gif') no-repeat 0 0; overflow:hidden }
+#browsePrev a { background-position:0 -20px }
+#browsePrev { background-position:0 -30px }
+#browseNext { background-position:0 -10px }
+
+section.picInfo { margin-top:20px; color:#666 }
+section.picInfo h4 { font-weight:300 }
+section.picInfo > span { margin:10px 0 0 15px; display:block }
+section.picInfo > ul { margin:10px 0 0 15px }
+section.picInfo > ul > li{ list-style-type:circle; padding:3px 0 }
+section.picInfo > ul li.noliStyle { list-style:none }
+
+/** RATING **/
+#rating > form { margin-top:10px }
+section.picInfo > span.vote { margin-top:0 }
+
+.metatab { color:#0063DC; cursor:pointer }
+#imagemetadata { position:relative }
+#imagemetadata_data { position:absolute; background:#FFF; width:250px; border:1px solid #DFDFDF; top:17px }
+#imagemetadata_data td { padding:3px }
+#imagemetadata_data td.label { color:#111; font-weight:800 }
+
+/** SIZES **/
+#sizetable { font-size:12px; margin-top:-20px }
+#sizetable > li { display:block; padding:5px }
+#sizetable > li > ul, #sizetable h3 { display:inline-block }
+#sizetable h3 { min-width:50px; text-align:left; padding:0 10px 0 0; position:relative; top:-10px }
+#sizetable > li > ul > li { display:inline-block; text-align:center }
+#sizetable > li > ul > li span { display:block }
+.imagedimension { font-size:10px; text-align:center; color:#AAA; padding:0 5px }
+
+#imageDisplay { margin-top:20px; min-width:400px; min-height:400px }
+.loaderbg { background:transparent url('../images/ajax-loader.gif') no-repeat center center }
+
+/** COMMENT FORM **/
+#commentform p { margin:0 0 5px }
+#commentform label { display:inline-block; padding-right:5px; width:80px }
+.commentinfo { font-size:13px; color:#555 }
+.commentinfo h4 { font-size:10px; color:#333 }
+.comment { margin:15px }
+#comments { display:none }
+.commenttext { margin:5px 5px 0; color:#000; font-size:12px; background:#F7F7F7; padding:7px 10px }
+#commentcontent h3 a, #showComments { font-weight:300; font-size:10px; line-height:24px; padding:0 5px; vertical-align:middle }
+#commententry { background:#F7F7F7; border:1px solid #CCC; padding:10px 15px; display:none }
+.commentdate { font-style:italic }
+
+/** ERROR BOX **/
+.errorbox { border:1px solid #B70000; background:#FFF2F2; padding:10px; font-size:12px; margin:15px }
+.errorbox h2 { color:#B70000; font-size:16px }
+.errorbox code { font-weight:800 }
+
+/** FOOTER **/
+footer { margin:30px auto 0; border-top:1px dotted #CCC; padding:10px; font-size:11px; color:#999; width:980px }
+footer .copyright { text-align:center; margin:10 auto 5px }
