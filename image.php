@@ -17,17 +17,6 @@ if(isset($_GET['sizes']) && strlen($_GET['sizes']) >0 )
     exit();
 } ?>
 <!-- // IMAGE PAGE // -->
-		<script type="text/javascript">
-		function toggleComments() { 
-			var commentDiv = document.getElementById("comments");
-			if (commentDiv.style.display == "block") { 
-				commentDiv.style.display = "none";
-			} else { 
-				commentDiv.style.display = "block"; 
-			} 
-		} 
-		</script>
-	
 			<section id="content">
 				<nav id="breadcrumbs">
 				    <?php printHomeLink('', ' &raquo; '); ?>
@@ -51,7 +40,7 @@ if(isset($_GET['sizes']) && strlen($_GET['sizes']) >0 )
 					
 					<?php if(function_exists('printCommentForm')) {
 					    $flkr->printFlkrComments( $_zp_current_image->getComments() ); // Doesn't require printCommentForm() function,
-					                                                                   // but we'll hide it if it's disabled.
+					    printCommentErrors();                                                               // but we'll hide it if it's disabled.
 					    printCommentForm(false, '<h3>'. gettext('Add Comment:') .' <a href="#" id="addComment" class="iblock">[ Show ]</a></h3>');
 					} ?>
 					

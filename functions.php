@@ -98,11 +98,13 @@ function flkrPrintCommentField( $name, $id, $class, $value, $type='text', $disab
     $output = sprintf($format, $type, $name .($disabled ? '-disabled':''),
         $id .($disabled ? '-disabled':''), ' class="inputbox'. ($disabled ? $dis_class:'') .'"', 
         $value, ' size="22"'.($disabled ? ' disabled':''));
-    
+    /**
+     * Ignore this and possibly delete it in the near future.
     if($add_hidden) {
         $output .= "\n";
         $output .= sprintf($format, 'hidden', $name, $id, '', $value, '');
     }
+    */
     echo $output;
     return true;
 }

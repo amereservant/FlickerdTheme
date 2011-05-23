@@ -3,7 +3,7 @@
  * Flickerd Theme
  *
  * @package     Flickerd
- * @version     1.0.0
+ * @version     1.0.1
  * @author      David Miles <david@thatchurch.com>
  * @link        http://github.com/amereservant/FlickerdTheme
  * @license     http://opensource.org/licenses/mit-license.php MIT License
@@ -15,11 +15,15 @@ require 'header.php';
 			    <?php if(getCurrentPage() == '1') { ?>
 			    <aside id="albums">
 				    <ul>
-					    <?php while(next_album()) { ?>
+					    <?php while(next_album(true)) { ?>
 					    <li class="album">
 						    <div class="albumPic">
 							    <a href="<?php echo getAlbumLinkURL(); ?>" title="<?php echo getAlbumTitle(); ?>">
+							        <?php if(!$_zp_current_album->checkAccess()) { // Display a protected image if they do not have access ?>
+							        <img class="albumThumb" height="75" width="75" src="<?php echo $_zp_themeroot; ?>/images/passwordprotected.png" />
+							        <?php } else { ?>
 								    <img class="albumThumb" height="75" width="75" src="<?php echo getAlbumThumb(); ?>" alt="<?php echo getAlbumTitle(); ?>" />
+							        <?php } ?>
 							    </a>
 						    </div>
 						    <section class="albumInfo">
