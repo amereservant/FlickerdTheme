@@ -83,11 +83,9 @@ function getImageWH($h, $w, $max)
  * @param   string  $value      The value for the field
  * @param   string  $type       Form input type.  Accepted values are 'text'.  Default is 'text'.
  * @param   bool    $disabled   If the field should be disabled from user-input
- * @param   bool    $add_hidden If the $disabled parameter is true and the input field is a text
- *                              field, then this most likely should be set to true
  * @return  string              Prints out the HTML syntax for the field unless an error occurs
  */
-function flkrPrintCommentField( $name, $id, $class, $value, $type='text', $disabled=false, $add_hidden=false )
+function flkrPrintCommentField( $name, $id, $class, $value, $type='text', $disabled=false )
 {
     // Check for a valid type, return false on failure
     if(!in_array($type, array('text'))) return false;
@@ -98,13 +96,12 @@ function flkrPrintCommentField( $name, $id, $class, $value, $type='text', $disab
     $output = sprintf($format, $type, $name .($disabled ? '-disabled':''),
         $id .($disabled ? '-disabled':''), ' class="inputbox'. ($disabled ? $dis_class:'') .'"', 
         $value, ' size="22"'.($disabled ? ' disabled':''));
-    /**
-     * Ignore this and possibly delete it in the near future.
-    if($add_hidden) {
+    
+    if($disabled) {
         $output .= "\n";
         $output .= sprintf($format, 'hidden', $name, $id, '', $value, '');
     }
-    */
+    
     echo $output;
     return true;
 }
