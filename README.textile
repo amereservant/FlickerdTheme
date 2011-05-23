@@ -9,6 +9,8 @@ The *Flickerd Theme* is licensed under the "MIT License":http://opensource.org/l
 
 h2. Usage
 
+*PHP 5 Required!*
+
 Refer to ZenPhoto's documentation on how to add and use themes.  It works just like a normal theme does.
 
 h2. Feedback
