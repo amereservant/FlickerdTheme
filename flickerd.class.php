@@ -424,10 +424,11 @@ ________EOD;
     */
     public function getStylesheets()
     {
+        global $_zp_themeroot;
         $format   = '<link type="text/css" rel="stylesheet" href="%s" media="%s" />' ."\n";
         $css_dir  = 'css/';
         $css_path = realpath(FLICKERD_PATH . $css_dir) . DS;
-        $css_url  = WEBPATH.'/'. THEMEFOLDER .'/' .getOption('current_theme') .'/'. $css_dir;
+        $css_url  = $_zp_themeroot .'/'. $css_dir;
         
         if(count($this->stylesheets) < 1) return false;
         
