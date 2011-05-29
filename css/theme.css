@@ -12,64 +12,6 @@
 
 div.pagelist { padding:20px 0; text-align:center }
 
-/*
-div.image{height:100%;width:75px;float:left;margin:15px 2px 2px}
-div.imagePic{width:75px;height:75px;background:transparent url(../images/album.gif) no-repeat center center}
-div.image-details{width:240px;float:left;margin:10px}
-.image-details p{font-size:7pt;color:#666;clear:left;width:240px}
-.image-details p .jeip-editor textarea{width:240px;font-size:10pt}
-div.image-details h3{height:20px;overflow:hidden;font-size:11pt}
-div.imagePic-details img{float:left}
-
-div.albumTitle{margin:25px 0}
-
-div.albumRss{clear:both;color:#aaa;padding:25px 0 0}
-
-
-div.singleImage{width:500px}
-
-
-
-
-div.imageInfo{height:30px;color:#666}
-
-div.toggle{background:transparent url(../images/toggle_open.gif);position:relative;text-align:center;width:18px;height:25px;top:1px}
-div.closed{background:transparent url(../images/toggle_closed.gif)}
-div#imageBrowser .albumName{font-size:11pt;font-weight:700;left:30px;position:relative;top:20px;width:142px}
-div.toggleBox{border:solid 1px #dfdfdf;background:#f3f3f3;padding:5px}
-
-div.searchHeader{background:transparent url(images/icon_ok) no-repeat left center;height:18px;padding-left:20px;line-height:20px;margin:25px 0}
-h2.searchAlbumsHeading{font-weight:400;clear:both;margin:0;padding:0 0 10px}
-h2.searchPhotosHeading{font-weight:400;clear:both;margin:0;padding:20px 0 10px}
-#imagemetadata_data{border:solid 1px #dfdfdf;width:250px}
-#imagemetadata_data td{text-align:left;vertical-align:top}
-#commentcontent h3 { padding:20px 0 5px }
-#comments{ font-size:1.2em }
-.comment { margin:15px 0 20px }
-div.commentmeta{font-size:9pt;font-weight:700}
-div.commentbody{font-size:9pt;margin:10px}
-div.commentdate{color:#666}
-.commentinfo h4 { color:#AAA; font-weight:300 }
-.commentinfo a { font-weight:800 }
-
-
-#captcha-code { margin-left:110px }
-.leavecomment{width:75%}
-.leavecomment .inputbox{font-size:10pt;width:100%;margin:5px;padding:5px}
-.leavecomment textarea{font-size:10pt;width:100%;margin:5px;padding:5px}
-.commentform_label{width:25px;font-size:10pt;color:#666}
-.pushbutton{font-size:10pt;padding:5px}
-
-#rating #vote{display:none}
-.sizetable{clear:both}
-.imagesizename{font-size:9pt;text-align:center;text-decoration:underline;padding:0 5px}
-
-a img,.imagesizetitle{border:none}
-ul.pagelist,ul.pagelist li{list-style-type:none;display:inline;margin:0;padding:0}
-span.albumOption a,span.albumOption a:hover{font-size:11pt;color:#000;text-decoration:none}
-.dateuploaded,.viewinfo,div.imageSide p{color:#aaa;margin-top:10px}
-*/
-
 .clear { clear:both }
 pre { white-space:pre }
 .iblock { display:inline-block }
@@ -119,7 +61,7 @@ ul.pagelist li .disabledlink { color:#BBB }
 
 /** ASIDE **/
 aside#albums { float:right; width:260px; background:#F5F5F5; padding:0 15px; font-size:12px }
-aside#albums .album { margin:0 0 20px; display:block }
+aside#albums .album { margin:10px 0 15px; display:block }
 aside#albums .albumPic { float:left; width:91px; height:95px; background:transparent url(../images/album.gif) no-repeat center center }
 aside#albums h4 { font-size:16px; margin-bottom:3px }
 aside#albums .albumInfo { padding:0 10px; width:145px }
