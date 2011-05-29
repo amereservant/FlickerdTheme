@@ -7,6 +7,7 @@
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script> -->
 <?php zp_apply_filter('theme_head'); ?>
+<script src="<?php echo $_zp_themeroot; ?>/js/modernizr-1.7.min.js" type="text/javascript"></script>
 <script src="<?php echo $_zp_themeroot; ?>/js/sitejs.js" type="text/javascript"></script>
 <?php printRSSHeaderLink('Gallery',gettext('Gallery RSS')); ?>
 <?php if(isset($_GET['album'])) printRSSHeaderLink('Album', getAlbumTitle()); ?>
