@@ -84,6 +84,7 @@ $_SESSION['flickrish_album_layout'] = $layout; ?>
 						</li>
 					<?php } // endwhile ?>
 					</ul>
+					<div class="clear"></div>
 				</section>
 				
 			<?php } //endif

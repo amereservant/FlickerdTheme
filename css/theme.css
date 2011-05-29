@@ -93,7 +93,7 @@ header #menuBar > ul > li { position:relative; display:inline-block }
 .menuitem { border-right:1px dotted #CCC }
 
 /** Search **/
-#search { float:left; margin:0; padding:0 }
+#search { float:left; margin:0; padding:0; min-width:250px }
 #search_form br{font-size:1px}
 #search_input { width:170px; font-size:10px; clear:right; padding:1px; height:12px }
 #search_submit{color:#0063DC;border:none;background:transparent;font-weight:700;margin:0;padding:0}
@@ -141,7 +141,7 @@ aside.albumInfo { width:270px }
 .albumStats { color:#AAA; margin:10px 0 0}
 
 #images-grid ul { float:right; width:700px }
-#images-grid li { display:inline-block; margin:0 3px 3px 0 }
+#images-grid li { display:inline-block; margin:0 3px 3px 0; min-width:75px; min-height:75px }
 #images-grid li a:hover img { opacity:0.5; filter:alpha(opacity=50) }
 
 .images ul li { display:inline-block; width:240px; margin:0 42px 10px; vertical-align:top }
@@ -172,7 +172,7 @@ aside.albumInfo { width:270px }
 #toggle.closed:hover { background-position:-18px 0 }
 #toggleBox { background:#F3F3F3; border:1px solid #DFDFDF; padding:5px }
 #thumbBoxes { text-align:center; min-width:188px /** min-width is for the js transition, otherwise the animation wouldn't be correct **/ }
-#thumbBoxes li { display:inline-block }
+#thumbBoxes li { display:inline-block; width:75px; height:75px }
 #thumbBoxes li a { display:block; padding:2px }
 #thumbNav { text-align:center }
 #thumbNav span { display:inline-block }
