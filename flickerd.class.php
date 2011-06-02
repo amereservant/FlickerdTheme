@@ -401,8 +401,9 @@ ________EOD;
                         $comment['name'] .'</a>';
             else
                 $name = $comment['name'];
+                
+            $date    = $this->_parseDate($comment['date']);
             
-            $date    = $this->_parseDate($comment[5]);
             $output .= sprintf($format, $comment['id'], $name, ($date ? date('F j, Y', $date) : ''), $comment['comment']);
         }
         
@@ -558,11 +559,14 @@ ________EOD;
    /**
     * Parse Date
     *
-    * This method is used to parse the date format into a valid UNIX timestamp since
-    * relying on strtotime prior to PHP 5.3 is unreliable.
+    * This method is used to parse the date format into a valid UNIX timestamp.
+    * It duplicates most of the functionality of the <b>myts_date()</b> function in
+    * the ZenPhoto file <i>functions.php</i>.
     *
-    * The expected input format is <b>YYYY-MM-DD HH:MM:SS</b> as a string.
+    * The expected input format is <b>YYYYMMDDHHMMSS.000000</b> as a string.
+    * This is the value for the comments parameter <i>'date'</i>.
     *
+    * @see      printFlkrComments()
     * @param    string  $input  The time string to parse, formatted as explained in the description.
     * @return   integer         A UNIX timestamp on success, or (bool) FALSE on failure
     * @access   private
@@ -570,12 +574,16 @@ ________EOD;
     */
     private function _parseDate( $input )
     {
-        $parts = explode(' ', $input);
-        if(count($parts) < 2) return FALSE;
+        $timezoneadjust = getOption('time_offset');
+
+	    $month  = substr( $input, 4,2 );
+	    $day    = substr( $input, 6, 2 );
+	    $year   = substr( $input, 0, 4 );
+
+	    $hour   = substr( $input, 8, 2 );
+	    $min    = substr( $input, 10, 2 );
+	    $sec    = substr( $input, 12, 2 );
         
-        list($year, $month, $day) = explode('-', $parts[0]);
-        list($hour, $minute, $second) = explode(':', $parts[1]);
-        
-        return mktime($hour, $minute, $second, $month, $day, $year);
+        return mktime($hour, $min, $sec, $month, $day, $year);
     }
 }
