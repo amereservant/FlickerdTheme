@@ -402,7 +402,8 @@ ________EOD;
             else
                 $name = $comment['name'];
             
-            $output .= sprintf($format, $comment['id'], $name, date('F j, Y', strtotime($comment[5])), $comment['comment']);
+            $date    = $this->_parseDate($comment[5]);
+            $output .= sprintf($format, $comment['id'], $name, ($date ? date('F j, Y', $date) : ''), $comment['comment']);
         }
         
         $output .= "</ul>\n";
@@ -552,5 +553,29 @@ ________EOD;
         $buffer = str_replace(', ', ',', $buffer);
         $buffer = str_replace(': ', ':', $buffer);
         return $buffer;
-    }  
+    }
+    
+   /**
+    * Parse Date
+    *
+    * This method is used to parse the date format into a valid UNIX timestamp since
+    * relying on strtotime prior to PHP 5.3 is unreliable.
+    *
+    * The expected input format is <b>YYYY-MM-DD HH:MM:SS</b> as a string.
+    *
+    * @param    string  $input  The time string to parse, formatted as explained in the description.
+    * @return   integer         A UNIX timestamp on success, or (bool) FALSE on failure
+    * @access   private
+    * @since    1.0.1
+    */
+    private function _parseDate( $input )
+    {
+        $parts = explode(' ', $input);
+        if(count($parts) < 2) return FALSE;
+        
+        list($year, $month, $day) = explode('-', $parts[0]);
+        list($hour, $minute, $second) = explode(':', $parts[1]);
+        
+        return mktime($hour, $minute, $second, $month, $day, $year);
+    }
 }
