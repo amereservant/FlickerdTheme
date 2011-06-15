@@ -18,18 +18,20 @@ pre { white-space:pre }
 a { color:#0063DC; text-decoration:none }
 a:hover { color:#0063DC; text-decoration:underline }
 header { border-bottom:dotted 1px #ccc; padding-top:5px }
-header h1 { font-weight:800; color:#0063DC; width:980px; margin:0 auto; font-size:28px }
+header h1 { font-weight:800; color:#0063DC; margin:0 auto; font-size:28px }
 header h1 span { color:#FF0084 }
 h2 { font-size:24px; margin:0 0 5px }
 h3 { font-size:16px; margin:10px 0 }
 h4 { font-size:14px; margin:10px 0 0 }
+
+header h1, header #menuBar, #content, footer { width:850px }
 
 /** Menu Bar **/
 .menu { float:left; width:530px; line-height:25px }
 .menu a { font-weight:700 }
 ul.flat { list-style-type:none; margin:0; padding:0}
 ul.flat li { list-style-type:none; display:inline; margin:0; padding:0 }
-header #menuBar { width:980px; margin:0 auto }
+header #menuBar { margin:0 auto }
 header #menuBar > ul > li { position:relative; display:inline-block }
 .menuitem, .admintoolbox { font-size:12px; padding:0 5px }
 .menuitem { border-right:1px dotted #CCC }
@@ -44,12 +46,13 @@ header #menuBar > ul > li { position:relative; display:inline-block }
 #searchextrashow li{display:block;margin:2px}
 .results { font-size:12px; display:inline-block; padding:5px; background:#F5F5F5; margin:0 0 10px }
 
-#content { width:980px;font-size:10px; margin:35px auto }
+#content { font-size:10px; margin:35px auto }
 #pg-1 #flkr-feed { width:650px } /* Compensate for the Album List on the index page */
-#flkr-feed ul li { display:inline-block; padding:0; vertical-align:top; width:320px }
+#flkr-feed ul li { display:inline-block; padding:0; vertical-align:top; width:270px; position:relative }
 #flkr-feed .pic-info { color:#777 }
 #flkr-feed .pic-info-bottom { color:#777; margin:5px auto 25px }
 #flkr-feed h4 { font-size:14px; margin:5px 0 }
+.image-overlay-loader { position:absolute; top:0; left:0; z-index:40 }
 
 ul.pagelist li { display:inline }
 ul.pagelist li a, ul.pagelist li.current, ul.pagelist li .disabledlink { border:1px solid #EEE; font-size:12px; padding:1px 4px }
@@ -82,11 +85,11 @@ aside.albumInfo { width:270px }
 .albumInfo span img { margin-bottom:-3px }
 .albumStats { color:#AAA; margin:10px 0 0}
 
-#images-grid ul { float:right; width:700px }
+#images-grid ul { float:right; width:550px }
 #images-grid li { display:inline-block; margin:0 3px 3px 0; min-width:75px; min-height:75px }
 #images-grid li a:hover img { opacity:0.5; filter:alpha(opacity=50) }
 
-.images ul li { display:inline-block; width:240px; margin:0 42px 10px; vertical-align:top }
+.images ul li { display:inline-block; width:240px; margin:0 20px 10px; vertical-align:top }
 
 .imageDescription, .albumDescription { margin:10px 0 0; font-size:12px; color:#000 }
 .dateuploaded, .viewinfo { color:#AAA; margin:2px 0 0 }
@@ -137,9 +140,13 @@ section.picInfo > span.vote { margin-top:0 }
 
 .metatab { color:#0063DC; cursor:pointer }
 #imagemetadata { position:relative }
-#imagemetadata_data { position:absolute; background:#FFF; width:250px; border:1px solid #DFDFDF; top:17px }
+#imagemetadata_data { position:absolute; background:#FFF; width:250px; border:1px solid #DFDFDF; top:17px; margin-bottom:20px }
 #imagemetadata_data td { padding:3px }
 #imagemetadata_data td.label { color:#111; font-weight:800 }
+
+/** GOOGLE MAP **/
+#mapid_data > div { z-index:20; right:0; top:0; width:400px !important }
+#googleMap #mapid_toggle { margin:10px 0 5px 15px; display:block }
 
 /** SIZES **/
 #sizetable { font-size:12px; margin-top:-20px }
@@ -151,6 +158,7 @@ section.picInfo > span.vote { margin-top:0 }
 .imagedimension { font-size:10px; text-align:center; color:#AAA; padding:0 5px }
 
 #imageDisplay { margin-top:20px; min-width:400px; min-height:400px }
+#imageDisplay img { max-width:none }
 .loaderbg { background:transparent url('../images/ajax-loader.gif') no-repeat center center }
 
 /** COMMENT FORM **/
@@ -171,5 +179,5 @@ section.picInfo > span.vote { margin-top:0 }
 .errorbox code { font-weight:800 }
 
 /** FOOTER **/
-footer { margin:30px auto 0; border-top:1px dotted #CCC; padding:10px; font-size:11px; color:#999; width:980px }
+footer { margin:30px auto 0; border-top:1px dotted #CCC; padding:10px; font-size:11px; color:#999 }
 footer .copyright { text-align:center; margin:10 auto 5px }

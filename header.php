@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=<?php echo getOption('charset'); ?>" /> 
-<title><?php printGalleryTitle(); ?></title>
+<meta http-equiv="content-type" content="text/html; charset=<?php echo getOption('charset'); ?>" />
+<?php 
+// Build page title
+$imgtitle = getBareImageTitle();
+$albtitle = getBareAlbumTitle();
+$title    = ($imgtitle ? $imgtitle .' &laquo; ':'');
+$title   .= ($albtitle ? $albtitle .' &laquo; ':'') . getGalleryTitle();
+$delay    = getOption('flickerd_preview_delay');
+$delay    = $delay ? $delay : 500;
+?>
+<title><?php echo $title; ?></title>
 <?php echo $flkr->getStylesheets(); ?>
-
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script> -->
+<script type="text/javascript">flickerdPreviewDelay = '<?php echo $delay; ?>';</script>
 <?php zp_apply_filter('theme_head'); ?>
 <script src="<?php echo $_zp_themeroot; ?>/js/modernizr-1.7.min.js" type="text/javascript"></script>
-<script src="<?php echo $_zp_themeroot; ?>/js/sitejs.js" type="text/javascript"></script>
+<script src="<?php echo $_zp_themeroot; ?>/js/sitejs.min.js" type="text/javascript"></script>
 <?php printRSSHeaderLink('Gallery',gettext('Gallery RSS')); ?>
 <?php if(isset($_GET['album'])) printRSSHeaderLink('Album', getAlbumTitle()); ?>
 </head>

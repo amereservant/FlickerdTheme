@@ -127,7 +127,14 @@ if(isset($_GET['sizes']) && strlen($_GET['sizes']) >0 )
 						</ul>
 					</section>
 					
+					<?php if(function_exists('printGoogleMap') && hasMapData()) { ?>
+					<section id="googleMap" class="picInfo">
+					    <h4>Google Map</h4>
+					    <?php printGoogleMap('Show/Hide Map', 'mapid', 'hide'); ?>
+					</section>
+					<?php } ?>
+					
 				</aside>
-				
-			</section>
+				<div class="clear"></div>
+			</section><!-- #content -->
 <?php require 'footer.php'; ?>

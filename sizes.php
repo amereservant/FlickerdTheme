@@ -57,6 +57,7 @@
 						</ul>
 					</li>
 				</ul>
+				<a href="<?php echo $_zp_current_image->getImageLink(); ?>" title="Go back to image details" style="display:block">&lt;&lt; Go Back</a>
 				<section id="imageDisplay">
 			        <img id="imgView" src="<?php echo htmlentities(getDefaultSizedImage()); ?>" alt="Preview" />
 	            </section>

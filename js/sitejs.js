@@ -7,22 +7,14 @@
  *
  * @author      David Miles <david@thatchurch.com>
  * @package     Flickerd
- * @version     1.0.0
+ * @link        https://github.com/amereservant/FlickerdTheme
+ * @version     1.0.2
  */
 (function($) {
     /**
-     ** Duplicates & replaces the function on the image.php page
-     **
-    $.fn.toggleComments = function() {
-        $(this).bind('click', function() {
-            var commentDiv = $('#comments');
-            commentDiv.fadeToggle();
-        });
-    }
-    */
-    
-    /**
      * Animate boxes for the image page
+     *
+     * @since   1.0.0
      */
     $.fn.toggleBox = function(options) {
         $(this).bind('click', function() {
@@ -48,6 +40,8 @@
     
    /**
     * Transistions for the image sizes page for switching between sizes
+    *
+    * @since   1.0.0
     */
     $.fn.imageSwitch = function() {
         $(this).bind('click', function(e) {
@@ -67,6 +61,8 @@
     
     /**
      * Toggle Comments sections
+     *
+     * @since   1.0.0
      */
     $.fn.commentToggle = function(toggleDiv) {
         $(this).bind('click', function(e){
@@ -86,6 +82,8 @@
     
    /**
     * Add needed classes to the metadata elements for metadata property toggling
+    *
+    * @since   1.0.0
     */
     $.fn.modBox = function() {
         $(this).addClass('metatab closed');
@@ -93,7 +91,44 @@
     }
     
    /**
+    * Show a larger preview image on mouseover Thumbnails
+    *
+    * @since    1.0.2
+    */
+    $.fn.previewImage = function() {
+        $(this).bind('mouseover', function() {
+            var elem = $(this);
+            var timeoutID = window.setTimeout( function() {
+                
+                var orgsrc = elem.parent('a').attr('href');
+                var src    = elem.attr('data-preview_url');
+                var width  = elem.width();
+                var height = elem.height();
+                
+                elem.after('<div class="image-overlay-loader loaderbg" style="width:'+ width +'px;height:'+height+'px">'+
+                    '<img src="'+orgsrc+'" id="overlayImg" style="display:none" /></div>');
+                
+                var img = new Image();
+                $(img).load(function() {
+                    $('#overlayImg').attr('src', src);
+                    $('#overlayImg').fadeIn();
+                    $('.image-overlay-loader').removeClass('loaderbg').css({'width':img.width, 'height':img.height});
+                }).attr('src', src);
+                
+                $('#overlayImg').bind('mouseleave', function() {
+                    $('.image-overlay-loader').remove();
+                });
+            }, flickerdPreviewDelay);
+            elem.bind('mouseleave', function() {
+                window.clearTimeout(timeoutID);
+           });
+        });
+    }
+    
+   /**
     * Initiate element functions on DOM ready
+    *
+    * @since   1.0.0
     */
     $(document).ready(function() {
         $('#toggle').toggleBox({ toggleBox : '#toggleBox', width : 'toggle', height : 'toggle' });
@@ -102,5 +137,6 @@
         $('.switch').imageSwitch();
         $('#addComment').commentToggle('#commententry');
         $('#showComments').commentToggle('#comments');
+        $('#flkr-feed > ul > li > a > img').previewImage();
     });
 })(jQuery);

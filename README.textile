@@ -15,14 +15,31 @@ Refer to ZenPhoto's documentation on how to add and use themes.  It works just l
 
 h2. Feedback
 
-*Report An Issue/Bug*
+*Report An Issue/Bug/Suggestion*
 Please report issues on the project's "GitHub Issues":issues page.
 
-*Comments/Suggestions*
+*Comments/Feedback*
 If you'd like to leave feedback, please visit the "ZenPhoto's Forums":feedback_link
 and leave a comment on the post for this theme.  Hopefully a better commenting system can be
 implimented at a later date.
 
+h3. Changelog
+
+h4. Version 1.0.2
+
+* *GoogleMap Plugin Support* - Added support for the GoogleMap plugin as per request in "Issue 11":https://github.com/amereservant/FlickerdTheme/issues/11 
+and added the option *GoogleMap Width* to the _Theme Options_ page.
+* *Back-link Added to Sizes View* - As per request in "Issue 9":https://github.com/amereservant/FlickerdTheme/issues/9 , 
+a backlink has been added to the image __Sizes__ page.
+* *Password Page Design* - As mentioned in "Issue 4":https://github.com/amereservant/FlickerdTheme/issues/4 , 
+the page login form didn't have any formatting so it was formatted to match the ZenPhoto login page.
+* *Larger Image Preview* - In "Issue 6":https://github.com/amereservant/FlickerdTheme/issues/6 , a request
+for a large image layout was made.  The way this was implemented was by adding a **hover** effect so
+when the mouse hovers over the thumbnail for at least the *Preview Image Delay* length, a larger image
+_(size determined by the *options > theme > Standard options > Image size* value)_ is displayed.
+* *CSS Modified* - The width of the content area in the theme was changed for better viewing.
+* *Added better Page Titles* - In the head tags, better <title></title> values were added for better search engine ranking.
+ 
 [issues]http://github.com/amereservant/FlickerdTheme/issues
 [feedback_link]http://www.zenphoto.org/support/
 [Wiki_Page]http://wiki.github.com/amereservant/FlickerdTheme/

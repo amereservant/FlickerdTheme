@@ -206,6 +206,7 @@ ________EOD;
 		    //$search = getSearchURL( "{$image->data['mtime']}", '', 'mtime', '' ); // UNIX timestamp, therefore only one result
 		    $count  = $image->getCommentCount();
 		    $size   = getImageWH( $image->getHeight(), $image->getWidth(), 240 );
+		    $size  .= ' data-preview_url="'. $image->getSizedImage(getOption('image_size')) .'"';
 		    $content .= sprintf( $lif, $link, $title, $img, $size, $date, $hits, $count );
 		}
 	    $content .= "\n\t</ul>\n</div><!-- #flkr-feed -->\n";

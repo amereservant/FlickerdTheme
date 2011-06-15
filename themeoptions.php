@@ -35,6 +35,8 @@ class ThemeOptions {
 		setThemeOptionDefault('ratings',      1);
 		setThemeOptionDefault('title_highlight_count', 2);
 		setThemeOptionDefault('flkr_css_mtime', time());
+		setThemeOptionDefault('gmap_width', 300);
+		setThemeOptionDefault('flickerd_preview_delay', 700);
 		setThemeOption('zenpage',      1); // This never get's turned off.
 	}
    
@@ -131,6 +133,21 @@ class ThemeOptions {
 		                    'desc'  => 'Specify how many letters of the Gallery title should be highlighted the <span style="color:#FF0084">Flickr Pink</span> color, '.
 		                               'counting from <em>right-to-left</em>.<br />  If the number is <strong>0</strong>, no letters will be highlighted.',
 	                    ),
+	                    gettext('GoogleMap Width') => array(
+	                        'key'   => 'gmap_width',
+	                        'type'  => 2,
+	                        'desc'  => 'Specify the width <em>(in pixels)</em> for the Google Map display for individual images.  Default is <strong>300px.</strong><br />'.
+	                                   'Requires the GoogleMap Plugin to be enabled.<br />' .
+	                                   'Additional settings can be found on the ' .
+	                                   $this->_getLink( $admin_root .'admin-options.php?page=options&tab=plugin&show-GoogleMap#GoogleMap', 
+	                                    gettext('GoogleMap plugin options'), gettext('GoogleMap Plugin Options')) .' page.',
+	                    ),
+	                    gettext('Preview Image Delay') => array(
+	                        'key'   => 'flickerd_preview_delay',
+	                        'type'  => 2,
+	                        'desc'  => 'The number of milliseconds for the image preview to appear.<br />' .
+	                                   'When hovering over a thumbnail in the flickerd stream, this is how long it will wait to load and show the larger image.',
+	                    ), 
              );
 	}
     
@@ -149,16 +166,18 @@ class ThemeOptions {
 	public function handleOption( $option, $currentValue )
 	{
 		if( $option == 'zenpage' )
-		{
-	        echo '<input type="checkbox" id="zp_plugin_zenpage" value="1" name="zp_plugin_zenpage" ' .
+		    echo '<input type="checkbox" id="zp_plugin_zenpage" value="1" name="zp_plugin_zenpage" ' .
 	             ($currentValue == 1 ? 'checked':'') .' READONLY />';
-	    }
 	    
 	    if( $option == 'title_highlight_count' )
-	    {
 	        echo '<input type="text" id="title_highlight_count" value="'. $currentValue .'" size="3" ' .
 	             'name="title_highlight_count" />';
-	    }
+	    
+	    if( $option == 'gmap_width' )
+	        echo '<input type="text" id="gmap_width" value="'. $currentValue .'" size="5" name="gmap_width" />';
+	    
+	    if( $option == 'flickerd_preview_delay' )
+	        echo '<input type="text" id="flickerd_preview_delay" value="'. $currentValue .'" size="3" name="flickerd_preview_delay" />';
 	    return;
 	}
 }
