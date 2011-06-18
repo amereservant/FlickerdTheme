@@ -193,7 +193,7 @@ function fullImageLinkURL( $url, $img_path )
         if( strpos($url, $parts[$i]) !== FALSE )
             unset($parts[$i]);
     }
-    return $url . implode( '/', $parts );
+    return rtrim($url, '/') .'/'. implode( '/', $parts );
 }
 
 
