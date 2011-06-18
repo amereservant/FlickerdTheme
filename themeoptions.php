@@ -37,6 +37,7 @@ class ThemeOptions {
 		setThemeOptionDefault('flkr_css_mtime', time());
 		setThemeOptionDefault('gmap_width', 300);
 		setThemeOptionDefault('flickerd_preview_delay', 700);
+		setThemeOptionDefault('flickerd_use_fb_like', 1);
 		setThemeOption('zenpage',      1); // This never get's turned off.
 	}
    
@@ -108,6 +109,13 @@ class ThemeOptions {
 		                               $this->_getLink( $admin_root .'admin-plugins.php', gettext('Plugins'), gettext('Plugins Page')) . ' page.<br />' .
 		                               $this->_getLink( $admin_root .'admin-options.php?page=options&tab=plugin&show-comment_form#comment_form',
 		                                      gettext('Change plugin options'), gettext('Comment Form Plugin Options')),
+		                 ),
+		                 gettext('Facebook Like') => array(
+		                    'key'   => 'flickerd_use_fb_like',
+		                    'type'  => OPTION_TYPE_CHECKBOX,
+		                    'desc'  => 'Check to enable the <strong>Facebook Like</strong> to appear in the right sidebar when viewing images.<br />' .
+		                               'NOTE: The option setting '. $this->_getLink( $admin_root .'admin-options.php?page=options&tab=gallery',
+		                                      gettext('Website URL'), gettext('Website URL')) .' MUST be set or else the <em>Send</em> button will fail.',
 		                 ),
 		                 gettext('ZenPage') => array(
 		                    'key'   => 'zenpage',

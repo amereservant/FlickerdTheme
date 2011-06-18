@@ -130,7 +130,7 @@ aside.albumInfo { width:270px }
 section.picInfo { margin-top:20px; color:#666 }
 section.picInfo h4 { font-weight:300 }
 section.picInfo > span { margin:10px 0 0 15px; display:block }
-section.picInfo > ul { margin:10px 0 0 15px }
+section.picInfo > ul, .fb_iframe_widget { margin:10px 0 0 15px }
 section.picInfo > ul > li{ list-style-type:circle; padding:3px 0 }
 section.picInfo > ul li.noliStyle { list-style:none }
 

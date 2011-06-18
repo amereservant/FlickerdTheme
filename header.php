@@ -19,6 +19,14 @@ $delay    = $delay ? $delay : 500;
 <script src="<?php echo $_zp_themeroot; ?>/js/sitejs.min.js" type="text/javascript"></script>
 <?php printRSSHeaderLink('Gallery',gettext('Gallery RSS')); ?>
 <?php if(isset($_GET['album'])) printRSSHeaderLink('Album', getAlbumTitle()); ?>
+<?php if(getOption('flickerd_use_fb_like') && isset($is_image_page) && $is_image_page) { ?>
+<meta property="og:title" content="<?php echo $imgtitle; ?>" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<?php echo fullImageLinkURL(getMainSiteURL(), $_zp_current_image->getImageLink()); ?>" />
+<meta property="og:image" content="<?php echo fullImageLinkURL(getMainSiteURL(), getFullImageURL()); ?>" />
+<meta property="og:site_name" content="<?php echo getGalleryTitle(); ?>" />
+<meta property="fb:admins" content="1107773734" />
+<?php } ?>
 </head>
 
 <body<?php 

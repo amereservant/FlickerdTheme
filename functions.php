@@ -7,7 +7,7 @@
  * the theme's functionality and is used throughout the theme.
  *
  * @package     Flickerd
- * @version     1.0.0
+ * @version     1.0.2
  * @author      David Miles <david@thatchurch.com>
  * @link        http://github.com/amereservant/FlickerdTheme
  * @license     http://opensource.org/licenses/mit-license.php MIT License
@@ -161,6 +161,39 @@ function stripPTags( $desc )
     $out = str_replace('</p>', htmlentities('&nbsp;'), $desc);
     $out = str_replace('<p>', '', $out);
     return $out;
+}
+
+/**
+ * Full Image Link URL
+ *
+ * This takes the site URL and the Image Link and removes any duplicate references to 
+ * the sub-domain and duplicate trailing slashes.
+ * For example, if the functions <b>getMainSiteURL() . $_zp_current_image->getImageLink()</b> are called
+ * together and the the user entered a Website URL with a trailing slash, it will have two slashes.
+ * In the same instance, if ZenPhoto was installed in a sub-directory, then it will duplicate
+ * the subdirectory when both of those functions are combined.
+ *
+ * @param   string  $url        The URL to check and remove any trailing slash from.
+ *                              Likely to be the output from <i>getMainSiteURL()</i> function.
+ * @param   string  $img_path   The relative URL to the image's page.
+ *                              Likely to be the otput from <i>$_zp_current_image->getImageLink()</i>.
+ * @return  string              The corrected URL
+ * @since   1.0.2
+ */
+function fullImageLinkURL( $url, $img_path )
+{
+    $parts  = explode( '/', $img_path );
+    
+    for($i=0;$i < count($parts);$i++)
+    {
+        if(strlen($parts[$i]) < 1) {
+            unset($parts[$i]);
+            continue;
+        }
+        if( strpos($url, $parts[$i]) !== FALSE )
+            unset($parts[$i]);
+    }
+    return $url . implode( '/', $parts );
 }
 
 

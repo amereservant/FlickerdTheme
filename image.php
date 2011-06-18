@@ -3,11 +3,13 @@
  * Flickerd Theme
  *
  * @package     Flickerd
- * @version     1.0.0
+ * @version     1.0.2
  * @author      David Miles <david@thatchurch.com>
  * @link        http://github.com/amereservant/FlickerdTheme
  * @license     http://opensource.org/licenses/mit-license.php MIT License
  */
+
+$is_image_page = TRUE;
 require 'header.php';
 
 // If sizes are being requested, let the sizes.php handle the rest of the output.
@@ -99,6 +101,14 @@ if(isset($_GET['sizes']) && strlen($_GET['sizes']) >0 )
 						<h4>Tags</h4>
 						<?php printTags('links', NULL, 'taglist', ', ', true, '', '<em>'. gettext('(No tags...)') .'</em>'); ?>
 					</section>
+					<?php if(getOption('flickerd_use_fb_like')) { ?>
+					<section id="fblike" class="picInfo">
+					    <h4>Facebook</h4>
+					    <div id="fb-root"></div>
+					    <script src="http://connect.facebook.net/en_US/all.js#appId=218210621546761&amp;xfbml=1"></script>
+					    <fb:like href="<?php echo fullImageLinkURL(getMainSiteURL(), $_zp_current_image->getImageLink()); ?>" send="true" layout="button_count" width="220" show_faces="true" font=""></fb:like>
+					</section>
+					<?php } ?>
 					
 					<?php if(function_exists('printRating')) { ?>
 					<section id="rating" class="picInfo">
