@@ -8,7 +8,7 @@
  * @author      David Miles <david@thatchurch.com>
  * @package     Flickerd
  * @link        https://github.com/amereservant/FlickerdTheme
- * @version     1.0.2
+ * @version     1.0.2a
  */
 (function($) {
     /**
@@ -107,19 +107,31 @@
                 
                 elem.after('<div class="image-overlay-loader loaderbg" style="width:'+ width +'px;height:'+height+'px">'+
                     '<img src="'+orgsrc+'" id="overlayImg" style="display:none" /></div>');
-                
+                    
                 var img = new Image();
+                
+                $('.image-overlay-loader').bind('mouseleave', function() {
+                    $(this).remove();
+                    img = null;
+                });
+                
                 $(img).load(function() {
                     $('#overlayImg').attr('src', src);
-                    $('#overlayImg').fadeIn();
+                    $('#overlayImg').fadeIn('normal', function() {
+                        if(img === null) {
+                            $('.image-overlay-loader').remove();
+                            $('#overlayImg').remove();
+                        }
+                    });
+                    if(img === null) return false;
                     $('.image-overlay-loader').removeClass('loaderbg').css({'width':img.width, 'height':img.height});
                 }).attr('src', src);
-                
-                $('#overlayImg').bind('mouseleave', function() {
-                    $('.image-overlay-loader').remove();
-                });
+            
             }, flickerdPreviewDelay);
             elem.bind('mouseleave', function() {
+                window.clearTimeout(timeoutID);
+           });
+           $('#overlayImg').bind('mouseleave', function() {
                 window.clearTimeout(timeoutID);
            });
         });
